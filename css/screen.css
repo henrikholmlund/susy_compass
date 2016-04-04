@@ -483,6 +483,29 @@ table {
   border-spacing: 0;
 }
 
+/************
+Change default styles
+*************/
+/* line 14, ../scss/screen.scss */
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 19, ../scss/screen.scss */
+li {
+  list-style: none;
+}
+
+/* line 23, ../scss/screen.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/************
+  Susy
+*************/
 /* line 21, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_box-sizing.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
@@ -490,21 +513,167 @@ table {
   box-sizing: border-box;
 }
 
-/* line 20, ../scss/screen.scss */
+/* line 48, ../scss/screen.scss */
 .wrap {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
-  background-size: 26.31579%;
+  background-size: 6.32911%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
-  height: 100vh;
 }
 /* line 12, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .wrap:after {
   content: " ";
   display: block;
   clear: both;
+}
+
+/* line 53, ../scss/screen.scss */
+.content {
+  width: 74.68354%;
+  float: left;
+  margin-right: 1.26582%;
+  margin-top: 5vh;
+  padding-bottom: 1rem;
+  background: rgba(113, 218, 210, 0.8);
+}
+
+/* line 60, ../scss/screen.scss */
+.gallery {
+  /* centers the gallery
+   alternate:
+   margin-left: auto;
+   margin-right: auto;
+   ... or use the spread property....
+   margin-left: span(1 wide of 12);
+  */
+  padding: 0 8.47458%;
+  background: #c8c802;
+}
+/* line 42, ../scss/screen.scss */
+.gallery:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 76, ../scss/screen.scss */
+.gallery__item {
+  width: 18.36735%;
+  float: left;
+  margin-right: 2.04082%;
+  margin-bottom: 2.04082%;
+  background: #6464c8;
+}
+/* line 79, ../scss/screen.scss */
+.gallery__item:nth-child(5n) {
+  float: right;
+  margin-right: 0;
+}
+
+/* line 86, ../scss/screen.scss */
+.sidebar {
+  width: 24.05063%;
+  float: right;
+  margin-right: 0;
+  margin-top: 5vh;
+  padding-bottom: 1rem;
+  background: rgba(250, 231, 179, 0.8);
+}
+/* line 91, ../scss/screen.scss */
+.sidebar a {
+  color: #666;
+  padding-left: 1rem;
+  line-height: 2;
+  text-decoration: none;
+}
+
+/* line 101, ../scss/screen.scss */
+.inner-content {
+  width: 48.71795%;
+  float: left;
+  margin-right: 2.5641%;
+  background: rgba(236, 162, 250, 0.8);
+}
+
+/* line 107, ../scss/screen.scss */
+h2 {
+  padding: 1rem 0;
+  text-align: center;
+  color: #555;
+}
+
+/* line 113, ../scss/screen.scss */
+.site-header, .site-footer {
+  background: rgba(208, 193, 250, 0.8);
+}
+
+/* line 119, ../scss/screen.scss */
+.site-header a {
+  color: #555;
+  text-decoration: none;
+}
+
+/* line 126, ../scss/screen.scss */
+.widget {
+  width: 24.05063%;
+  float: left;
+  /*
+  using normal span
+  @include span(4 of 16);
+  &:nth-child(4n){
+    @include last;
+  }   */
+  background: rgba(120, 199, 250, 0.8);
+}
+/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+.widget:nth-child(4n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+  margin-left: 0;
+}
+/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+.widget:nth-child(4n + 2) {
+  margin-left: 25.31646%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+.widget:nth-child(4n + 3) {
+  margin-left: 50.63291%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+.widget:nth-child(4n + 4) {
+  margin-left: 75.94937%;
+  margin-right: -100%;
+  clear: none;
+}
+
+/* line 140, ../scss/screen.scss */
+.site-footer {
+  margin-top: 5vh;
+}
+
+/* line 144, ../scss/screen.scss */
+.logo {
+  float: left;
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+
+/* line 150, ../scss/screen.scss */
+nav {
+  float: right;
+}
+/* line 152, ../scss/screen.scss */
+nav li {
+  float: left;
+  margin-left: 1em;
+  line-height: 2rem;
 }

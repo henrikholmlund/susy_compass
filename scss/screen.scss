@@ -7,9 +7,30 @@
 @import "normalize";
 @import "susy";
 
+/************
+Change default styles
+*************/
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/************
+  Susy
+*************/
 
 $susy : (
-        columns: 4,
+        columns: 16,
         container: 1140px,
         global-box-sizing: border-box,
         debug: (image: show)
@@ -17,7 +38,122 @@ $susy : (
 
 @include border-box-sizing;
 
+@mixin cf {
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
 .wrap {
   @include container();
-  height: 100vh;
+
 }
+
+.content {
+  @include span(12);
+  margin-top: 5vh;
+  padding-bottom: 1rem;
+  background: rgba(113, 218, 210, 0.8);
+}
+
+.gallery {
+  @include cf;
+  //width: span(10 of 12);
+  /* centers the gallery
+   alternate:
+   margin-left: auto;
+   margin-right: auto;
+   ... or use the spread property....
+   margin-left: span(1 wide of 12);
+  */
+  //margin-left: span(1 of 12) + gutter(12);
+  padding: 0 span(1 wide of 12);
+  background: rgba(200, 200, 2, 1);
+
+}
+@include nested(10) {
+  .gallery__item {
+    @include span(2);
+    margin-bottom: gutter();
+    &:nth-child(5n) {
+      @include last;
+    }
+    background: rgb(100, 100, 200);
+  }
+}
+
+.sidebar {
+  @include span(4 last);
+  margin-top: 5vh;
+  padding-bottom: 1rem;
+  background: rgba(250, 231, 179, 0.8);
+  a {
+    color: #666;
+    padding-left: 1rem;
+    line-height: 2;
+    text-decoration: none;
+  }
+}
+
+
+@include nested(8) {
+  .inner-content {
+    @include span(4);
+    background: rgba(236, 162, 250, 0.8);
+  }
+}
+
+h2 {
+  padding: 1rem 0;
+  text-align: center;
+  color: #555;
+}
+
+.site-header, .site-footer {
+  background: rgba(208, 193, 250, 0.8);
+
+}
+
+.site-header {
+  a {
+    color: #555;
+    text-decoration: none;
+  }
+
+}
+
+.widget {
+  // using gallery mixin
+
+  @include gallery(4 of 16);
+
+  /*
+  using normal span
+  @include span(4 of 16);
+  &:nth-child(4n){
+    @include last;
+  }   */
+  background: rgba(120, 199, 250, 0.8);
+}
+
+.site-footer {
+  margin-top: 5vh;
+}
+
+.logo {
+  float: left;
+  line-height:2rem;
+  font-size: 1.5rem;
+}
+
+nav {
+  float: right;
+  li {
+    float: left;
+    margin-left: 1em;
+    line-height: 2rem;
+  }
+}
+
+
